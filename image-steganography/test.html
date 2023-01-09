@@ -1,0 +1,114 @@
+<html>
+<head>
+  <title>Steganography</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <link href='assets/img/icon2.png' rel='shortcut icon'>
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark p-3">
+        <div class="container-fluid top rounded-pill p-2">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/icon2.png" alt="" width="35" height="35" class="ms-3">
+            <span class="fw-bold ms-2">Image Steganography</span>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link"  href="index.html">Encode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Decode</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <div class="container mt-3 mb-3">
+    <div class="row">
+      <div class="col">
+
+
+        <form class="form" name = "simpleForm" action = "#" onsubmit = "return validateForm()">
+          <div class="card rounded shadow " style="width: 35rem;">
+            <div class="card-header">
+              <h5>Decode message</h5>
+            </div>
+            <div class="card-body">
+              <div class="col-md">
+                <div class="form-group p-3">
+                  <label for="formFileSm" class="form-label">Add Image</label>
+                  <input class="form-control form-control-sm" type="file" name="decodeFile" onchange="previewDecodeImage()" id="image" accept=".jpg,.jpeg,.png" required>
+                  <p class = "eror errorMessagegambar top-arrow fst-italic" > </p>
+                </div>
+
+                <div class="form-group p-3">
+                    <div class="decode" style="display: none;">
+                        <label class="form-label">Decode Image :</label>
+                        <center>
+                            <canvas></canvas>
+                        </center>
+                      </div>
+                </div>
+                
+                <div class="form-group p-3">
+                  <button type="submit" class="decode btn btn-ungu pull-left"  onclick="decodeMessage()">Decode</button>
+                </div>
+
+              </div>
+            </div>
+           
+          </div>
+        
+        </form>  
+
+      </div>
+      <div class="col">
+        <div class="row">
+            <div class="binary-decode" style="display: none;">
+                <div class="card p-3">
+                    <div class="form-group">
+                        <label class="form-label">Hidden message :</label >
+                        <textarea class="form-control  form-control-sm message" style="word-wrap:break-word;" readonly>
+                        </textarea>
+                    </div>
+                </div>   
+            </div>
+        </div>
+      </div>
+      
+          <div class="clearfix"></div>
+        </div>
+
+       
+      </div>
+
+    </div>
+
+    <!-- <footer style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
+      &copy; 2014 by <a href="mailto:stylesuxx@gmail.com">stylesuxx</a>
+    </footer> -->
+  </div>
+
+  <style>
+    canvas {
+      max-width: 60%;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="text/JavaScript" src="script.js"></script>
+  
+  <script src="sweetalert2.min.js"></script>
+
+</body>
+</html>
